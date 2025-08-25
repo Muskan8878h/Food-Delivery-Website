@@ -17,7 +17,7 @@ const Navbar = () => {
     ];
 
   return (
-    <nav className='bg-[#06402B] border-b-8 border-amber-900/30 shadow-amber-900/30 sticky top-0 z-50 shadow-[0_25px-50px_-12px] font-vibes group/nav overflow-x-hidden'>
+    <nav className='bg-[#B22222] border-b-8 border-amber-900/30 shadow-amber-900/30 sticky top-0 z-50 shadow-[0_25px-50px_-12px] font-vibes group/nav overflow-x-hidden'>
         <div className='absolute -top-3 left-1/2 -translate-x-1/2 w-full max-w-7xl px-4'>
             <div className='h-[6px] bg-gradient-to-r from-transparent via-amber-600/50 to-transparent shadow-[0_0_20px] shadow-amber-500/30' />
             <div className='flex justify-between px-6'>
@@ -90,7 +90,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-        <div className="md:hidden bg-[#06402B] border-t-4 border-amber-900/40 relative shadow-lg shadow-amber-900/30 w-full">
+        <div className="md:hidden bg-[#B22222] border-t-4 border-amber-900/40 relative shadow-lg shadow-amber-900/30 w-full">
             <div className="px-4 py-4 space-y-2">
             {navLinks.map((link) => (
                 <NavLink
@@ -106,10 +106,21 @@ const Navbar = () => {
                 {link.name}
                 </NavLink>
             ))}
+
+                <div className='pt-4 border-t-2 border-amber-900/30 space-y-2'>
+                    <NavLink to='/cart' onClick={() => setIsOpen(false)} className='w-full px-4 py-3 text-center text-amber-100 rounded-xl border-2 border-amber-900/30 hover:border-amber-600/50 flex items-center justify-center space-x-2 text-sm'>
+                        <FiShoppingCart className='text-lg' />
+                        {totalItems > 0 && (
+                            <span className='top-2 right-2 bg-amber-600 text-amber-100 text-xs w-5 h-5 rounded-full flex items-center justify-center'>
+                                {totalItems}
+                            </span>
+                        )}
+                    </NavLink>
+                </div>
+
             </div>
         </div>
         )}
-
     </nav>
   )
 }
