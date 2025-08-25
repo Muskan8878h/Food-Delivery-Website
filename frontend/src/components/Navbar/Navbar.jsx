@@ -85,12 +85,31 @@ const Navbar = () => {
                             </div>
                     </button>
                 </div>
-
-                {/* Mobile Navigation */}
-                
-
             </div>
         </div> 
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+        <div className="md:hidden bg-[#06402B] border-t-4 border-amber-900/40 relative shadow-lg shadow-amber-900/30 w-full">
+            <div className="px-4 py-4 space-y-2">
+            {navLinks.map((link) => (
+                <NavLink
+                key={link.name}
+                to={link.to}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                    `block px-4 py-3 text-sm rounded-xl transition-all items-center 
+                    ${isActive ? 'bg-amber-600/30 text-amber-400' : 'text-amber-100 hover:bg-amber-600/20'} 
+                    border-2 ${isActive ? 'border-amber-600/50' : 'border-amber-900/30'}`
+                }>
+                <span className="mr-3 text-amber-500">{link.icon}</span>
+                {link.name}
+                </NavLink>
+            ))}
+            </div>
+        </div>
+        )}
+
     </nav>
   )
 }
