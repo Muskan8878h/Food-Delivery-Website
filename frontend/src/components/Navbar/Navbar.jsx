@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GiChefToque, GiForkKnifeSpoon } from "react-icons/gi";
 import { NavLink,useLocation,useNavigate } from 'react-router-dom';
 import { FiHome,FiBook, FiStar,FiPhone,FiShoppingCart,FiLogOut,FiKey,} from 'react-icons/fi';
-import { useCart } from '../../../CartContext/CartContext';
+import { useCart } from '../../CartContext/CartContext';
 import Login from '../Login/Login';
 
 const Navbar = () => {
