@@ -1,172 +1,144 @@
-import { FaShippingFast, FaLeaf, FaHeart } from 'react-icons/fa';
-import { FaBolt, FaRegClock, FaCalendarCheck, FaFire } from 'react-icons/fa';
-import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
-import { FiUser, FiSmartphone, FiMail, FiHome } from 'react-icons/fi';
-import { FaUtensils } from 'react-icons/fa';
-import { GiChefToque, GiFoodTruck } from 'react-icons/gi';
-import IA1 from './IA1.png';
-import IA2 from './IA2.png';
-import IA3 from './IA3.png';
-import IA4 from './IA4.png';
-import IA5 from './IA5.png';
-import IA6 from './IA6.png';
+import {
+    FiPlusCircle,
+    FiList,
+    FiPackage,FiTruck, FiCheckCircle, FiClock,
+} from 'react-icons/fi';
 
-import Kebab from "./Kebab.png";
-import ChickenTikka from "./ChickenTikka.png";
-import ChickenChargha from "./ChickenChargha.png";
-import DesiChowmein from "./DesiChowmein.png";
-import GulabJamun from "./GulabJamun.png";
-import MasalaDosa from "./MasalaDosa.png";
-import PaneerTikka from "./PannerTikka.png";
-import PalakPaneer from "./PalakPaneer.png";
 
-import BannerImage from "./BannerImage.png";
-import Image1 from "./Image1.png";
-import Image2 from "./Image2.png";
-import Image3 from "./Image3.png";
-import Image4 from "./Image4.png";
-import Video from "./Video.mp4";
-
-// ABOUT PAGE
-export const features = [
-    {
-        id: 1,
-        title: "Instant Delivery",
-        text: "30-minute delivery guarantee in metro areas",
-        icon: FaShippingFast, // store the component reference
-        img: IA1,
-    },
-    {
-        id: 2,
-        title: "Master Chefs",
-        text: "Michelin-star trained culinary experts",
-        icon: GiChefToque,
-        img: IA2,
-    },
-    {
-        id: 3,
-        title: "Premium Quality",
-        text: "Locally sourced organic ingredients",
-        icon: FaLeaf,
-        img: IA3,
-    },
+export const navLinks = [
+    { name: 'Add Items', href: '/', icon: <FiPlusCircle /> },
+    { name: 'List Items', href: '/list', icon: <FiList /> },
+    { name: 'Orders', href: '/orders', icon: <FiPackage /> },
 ];
 
-export const stats = [
-    {
-        number: '10M+',
-        label: 'Deliveries',
-        icon: GiFoodTruck,
-        gradient: 'from-amber-500 via-orange-400 to-yellow-600',
-    },
-    {
-        number: '98%',
-        label: 'Satisfaction',
-        icon: FaHeart,
-        gradient: 'from-rose-500 via-amber-500 to-yellow-500',
-    },
-    {
-        number: '500+',
-        label: 'Cities',
-        icon: FaLeaf,
-        gradient: 'from-emerald-500 via-amber-500 to-yellow-600',
-    },
-    {
-        number: '24/7',
-        label: 'Support',
-        icon: FaRegClock,
-        gradient: 'from-amber-500 via-orange-400 to-rose-500',
-    },
-];
 
-export const teamMembers = [
-    {
-        name: "Marco Yansen",
-        role: "Executive Chef",
-        img: IA4,
-        bio: "3 Michelin stars | Italian cuisine specialist",
-        delay: 0.1,
-        social: {
-            twitter: "https://x.com/?lang=en",
-            instagram: "https://www.instagram.com/",
-            facebook: "https://www.facebook.com/",
-            linkedin: "https://www.linkedin.com/",
-        },
+// LIST CSS
+export const styles = {
+    pageWrapper: "min-h-screen bg-gradient-to-br from-[#1a120b] via-[#2a1e14] to-[#3e2b1d] py-12 px-4 sm:px-6 lg:px-8",
+    cardContainer: "bg-[#4b3b3b]/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border-2 border-amber-500/20",
+    title: "text-3xl font-bold mb-8 bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent text-center",
+    tableWrapper: "overflow-x-auto",
+    table: "w-full",
+    thead: "bg-[#3a2b2b]/50",
+    th: "p-4 text-left text-amber-400",
+    thCenter: "p-4 text-center text-amber-400",
+    tr: "border-b border-amber-500/20 hover:bg-[#3a2b2b]/30 transition-colors",
+    imgCell: "p-4",
+    img: "w-50 h-30 object-contain rounded-lg",
+    nameCell: "p-4",
+    nameText: "text-amber-100 font-medium text-lg",
+    descText: "text-sm text-amber-100/60",
+    categoryCell: "p-4 text-amber-100/80",
+    priceCell: "p-4 text-amber-300 font-medium",
+    ratingCell: "p-4",
+    heartsCell: "p-4",
+    heartsWrapper: "flex items-center gap-2 text-amber-400",
+    deleteBtn: "text-amber-500 hover:text-red-400 transition-colors p-2 rounded-lg hover:bg-red-900/20",
+    emptyState: "text-center py-12 text-amber-100/60 text-xl",
+
+    // AddItems styles
+    formWrapper: "min-h-screen bg-gradient-to-br from-[#1a120b] via-[#2a1e14] to-[#3e2b1d] py-10 px-4 sm:px-6 lg:px-8",
+    formCard: "bg-[#4b3b3b]/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-amber-500/20",
+    formTitle: "text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent text-center",
+    uploadWrapper: "flex justify-center",
+    uploadLabel: "w-full max-w-xs sm:w-72 h-56 sm:h-72 bg-[#3a2b2b]/50 border-2 border-dashed border-amber-500/30 rounded-2xl cursor-pointer flex items-center justify-center overflow-hidden hover:border-amber-400 transition-all",
+    uploadIcon: "text-3xl sm:text-4xl text-amber-500 mb-2 mx-auto animate-pulse",
+    uploadText: "text-amber-400 text-sm",
+    previewImage: "w-full h-full object-cover",
+    inputField: "w-full bg-[#3a2b2b]/50 border border-amber-500/20 rounded-xl px-4 py-3 sm:px-5 sm:py-4 focus:outline-none focus:border-amber-400 text-amber-100",
+    gridTwoCols: "grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6",
+    relativeInput: "relative",
+    rupeeIcon: "absolute left-4 top-1/2 -translate-y-1/2 text-amber-500 text-lg sm:text-xl",
+    actionBtn: "w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg transition-all hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-[1.02] active:scale-95 mt-6",
+
+    // AdminNavbar styles
+    navWrapper: "bg-[#2D1B0E] border-b-8 border-amber-900/40 shadow-lg sticky top-0 z-50 font-vibes",
+    navContainer: "max-w-7xl mx-auto px-4 flex justify-between items-center h-20",
+    logoSection: "flex items-center space-x-3",
+    logoIcon: "text-4xl text-amber-500",
+    logoText: "text-2xl font-bold text-amber-100 tracking-wide",
+    menuButton: "text-amber-200 text-2xl lg:hidden",
+    desktopMenu: "hidden lg:flex items-center space-x-4",
+    navLinkBase: "flex items-center space-x-2 px-4 py-2 rounded-xl border-2 text-sm font-medium transition-all",
+    navLinkActive: "bg-amber-900/30 border-amber-500 text-amber-300",
+    navLinkInactive: "border-amber-900/30 text-amber-100 hover:border-amber-500 hover:bg-amber-900/20",
+    mobileMenu: "lg:hidden flex flex-col space-y-3 mt-4 pb-4"
+};
+
+
+// DummyData.jsx
+// Centralized Tailwind CSS class definitions and style objects
+export const iconMap = {
+    FiClock: <FiClock className="text-lg" />,
+    FiTruck: <FiTruck className="text-lg" />,
+    FiCheckCircle: <FiCheckCircle className="text-lg" />,
+};
+
+// Status styles for order statuses
+export const statusStyles = {
+    processing: {
+        color: 'text-amber-400',
+        bg: 'bg-amber-900/20',
+        icon: 'FiClock',
+        label: 'Processing',
+        hideLabel: false,
     },
-    {
-        name: "Amit Singh",
-        role: "Pastry Chef",
-        img: IA5,
-        bio: "World Baking Champion | French desserts expert",
-        delay: 0.3,
-        social: {
-            twitter: "https://x.com/?lang=en",
-            instagram: "https://www.instagram.com/",
-            facebook: "https://www.facebook.com/",
-            linkedin: "https://www.linkedin.com/",
-        },
+    outForDelivery: {
+        color: 'text-blue-400',
+        bg: 'bg-blue-900/20',
+        icon: 'FiTruck',
+        label: 'Out for Delivery',
+        hideLabel: false,
     },
-    {
-        name: "Akash Trivedi",
-        role: "Sushi Chef",
-        img: IA6,
-        bio: "5th generation sushi chef | Traditional techniques",
-        delay: 0.5,
-        social: {
-            twitter: "https://x.com/?lang=en",
-            instagram: "https://www.instagram.com/",
-            facebook: "https://www.facebook.com/",
-            linkedin: "https://www.linkedin.com/",
-        },
+    delivered: {
+        color: 'text-green-400',
+        bg: 'bg-green-900/20',
+        icon: 'FiCheckCircle',
+        label: 'Delivered',
+        hideLabel: false,
     },
-];
+    succeeded: {
+        color: 'text-green-400',
+        bg: 'bg-green-900/20',
+        icon: 'FiCheckCircle',
+        label: 'Completed',
+        hideLabel: true,
+    },
+};
 
-// ABOUT HOMEPAGE
-export const aboutfeature = [
-    { icon: FaBolt, title: "Instant Ordering", text: "Seamless digital experience", color: "from-amber-400 to-orange-500" },
-    { icon: FaRegClock, title: "Always Open", text: "24/7 premium service", color: "from-rose-400 to-pink-600" },
-    { icon: FaCalendarCheck, title: "Exclusive Booking", text: "Priority reservations", color: "from-emerald-400 to-cyan-600" },
-    { icon: FaFire, title: "Signature Dishes", text: "Chef's special creations", color: "from-purple-400 to-indigo-600" }
-];
+// Payment method label and classes
+export const paymentMethodDetails = {
+    cod: {
+        label: 'COD',
+        class: 'bg-yellow-600/30 text-yellow-300 border-yellow-500/50',
+    },
+    card: {
+        label: 'Credit/Debit Card',
+        class: 'bg-blue-600/30 text-blue-300 border-blue-500/50',
+    },
+    upi: {
+        label: 'UPI Payment',
+        class: 'bg-purple-600/30 text-purple-300 border-purple-500/50',
+    },
+    default: {
+        label: 'Online',
+        class: 'bg-green-600/30 text-green-400 border-green-500/50',
+    },
+};
 
-// SPECIAL MENU
-export const cardData = [
-    { id: 1, title: 'Kebab', rating: 4.5, hearts: 105, description: 'Juicy grilled meat with authentic spices', image: Kebab, popular: true, price: '₹40' },
-    { id: 2, title: 'Chicken Tikka', rating: 5.0, hearts: 155, description: 'Tender chicken marinated in sauce', image: ChickenTikka, bestseller: true, price: '₹140' },
-    { id: 3, title: 'Desi Chowmein', rating: 4.2, hearts: 85, description: 'Spicy Asian noodles with a local twist', image: DesiChowmein, price: '₹60' },
-    { id: 4, title: 'Chicken Chargha', rating: 4.8, hearts: 285, description: 'Crispy golden fried whole chicken', image: ChickenChargha, special: true, price: '₹200' },
-];
-export const additionalData = [
-    { id: 5, title: 'Paneer Tikka', rating: 4.8, hearts: 210, description: 'Cottage cheese marinated in spices', image: PaneerTikka, popular: true, price: '₹220' },
-    { id: 6, title: 'Masala Dosa', rating: 4.5, hearts: 165, description: 'Crispy rice crepe with potato filling', image: MasalaDosa, price: '₹180' },
-    { id: 7, title: 'Palak Paneer', rating: 4.7, hearts: 190, description: 'Spinach curry with cottage cheese', image: PalakPaneer, price: '₹200' },
-    { id: 8, title: 'Gulab Jamun', rating: 4.9, hearts: 275, description: 'Golden dumplings in rose syrup', image: GulabJamun, special: true, price: '₹30' },
-];
+// Table layout classes
+export const tableClasses = {
+    wrapper: 'overflow-x-auto',
+    table: 'w-full',
+    headerRow: 'bg-[#3a2b2b]/50',
+    headerCell: 'p-4 text-left text-amber-400',
+    row: 'border-b border-amber-500/20 hover:bg-[#3a2b2b]/30 transition-colors group',
+    cellBase: 'p-4',
+};
 
-// FOOTER 
-export const socialIcons = [
-    { icon: FaFacebook, link: 'https://www.facebook.com/share/1DjbwhdR4z/', color: '#3b5998', label: 'Facebook' },
-    { icon: FaInstagram, link: 'https://www.instagram.com/hexagondigitalservices?igsh=MW1nanQ2eXIycnRkZQ==', color: '#E1306C', label: 'Instagram' },
-    { icon: FaXTwitter, link: 'https://x.com/HexagonDService?t=Vv5ReZAIbXONqkq_O0ksWQ&s=09', color: '#000', label: 'X' },
-    { icon: FaYoutube, link: 'https://youtube.com/@hexagondigitalservices?si=UnBt0AHI-ChN5Mze', color: '#FF0000', label: 'Youtube' },
-];
-
-// LOGIN 
-export const inputBase = "w-full rounded-lg bg-[#2D1B0E] text-amber-100 placeholder-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-600";
-export const iconClass = "absolute top-1/2 transform -translate-y-1/2 left-3 text-amber-400";
-
-// CONTACT
-export const contactFormFields = [
-    { label: 'Full Name', name: 'name', type: 'text', placeholder: 'Enter your full name', Icon: FiUser },
-    { label: 'Phone Number', name: 'phone', type: 'tel', placeholder: '+91 12345 67890', pattern: "[+]{0,1}[0-9]{10,13}", Icon: FiSmartphone },
-    { label: 'Email Address', name: 'email', type: 'email', placeholder: 'your.email@example.com', Icon: FiMail },
-    { label: 'Address', name: 'address', type: 'text', placeholder: 'Enter your delivery address', Icon: FiHome },
-    { label: 'Dish Name', name: 'dish', type: 'text', placeholder: 'Enter dish name (e.g., Butter Chicken)', Icon: FaUtensils },
-];
-
-// BANNER
-export const bannerAssets = {
-    bannerImage: BannerImage,
-    orbitImages: [Image1, Image2, Image3, Image4],
-    video: Video,
+// Utility classes
+export const layoutClasses = {
+    page: 'min-h-screen bg-gradient-to-br from-[#1a120b] via-[#2a1e14] to-[#3e2b1d] py-12 px-4 sm:px-6 lg:px-8',
+    card: 'bg-[#4b3b3b]/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border-2 border-amber-500/20',
+    heading: 'text-3xl font-bold mb-8 bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent text-center',
 };
