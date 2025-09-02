@@ -4,6 +4,7 @@ import { FaInfoCircle } from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 import AboutImage from '../../assets/AboutImage.png'
 import FloatingParticle from '../FloatingParticle/FloatingParticle'
+import './AboutHome.css'
 const AboutHome=()=>{
     return(
         <div className="min-h-screen bg-gradient-to-br from-[#0f0a0a] via-[#1a1212] to-[#2a1e1e] text-white py-10 sm:py-20 relative overflow-hidden"> 
