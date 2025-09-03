@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useCart } from '../../CartContext/CartContext';
-const categories = ['Breakfast', 'Lunch', 'Dinner', 'mexican', 'Italian', 'Desserts', 'Drinks'];
+import {dummyMenuData} from '../../assets/OmDD';
+const categories = ['Breakfast', 'Lunch', 'Dinner', 'Mexican', 'Italian', 'Desserts', 'Drinks'];
 const OurHomeMenu = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
+
+  const displayItems=(dummyMenuData[activeCategory] || []).slice(0,4);
   const { cartItems, addToCart, removeFromCart } = useCart();
+  const getQuantity=id=>(cartItems.find(i=>i.id===id)?.quantity || 0);
   return (
     <div className="bg-gradient-to-br from-[#1a120b] via-[#2a1e14] to-[#3e2b1d] min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -29,6 +33,20 @@ const OurHomeMenu = () => {
               {cat}
             </button>
           ))}
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
+            {displayItems.map((item,i)=>{
+                const quantity=getQuantity(item.id);
+                return (
+                    <div key={item.id} className="relative bg-amber-900/20 rounded-2xl overflow-hidden border border-amber-800/30 backdrop-blur-sm flex flex-col transition-all duration-500"
+                    style={{'--index':i}}>
+                        <div className="relative h-48 sm:h-56 md:h-60 flex items-center justify-center bg-black/10">
+                        <img src={item.image} alt={item.name}/>
+                        </div>
+                        </div>
+                )
+            })}
         </div>
       </div>
     </div>
