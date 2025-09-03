@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../../CartContext/CartContext';
 import {dummyMenuData} from '../../assets/OmDD';
+import {Link} from 'react-router-dom'
 const categories = ['Breakfast', 'Lunch', 'Dinner', 'Mexican', 'Italian', 'Desserts', 'Drinks'];
 const OurHomeMenu = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
@@ -73,7 +74,8 @@ const OurHomeMenu = () => {
                                       </button>
                                     </>
                                 ):(
-                                  <button className="bg-amber-900/40 px-4 py-1.5 rounded-full font-cinzel text-xs uppercase sm:text-sm tracking-wider transition-transform duration hover:scale-110 hover:shadow-lg hover:shadow-amber-900/20 relative overflow-hidden border border-amber-800/50">
+                                  <button onClick={()=>addToCart(item,1)}
+                                  className="bg-amber-900/40 px-4 py-1.5 rounded-full font-cinzel text-xs uppercase sm:text-sm tracking-wider transition-transform duration hover:scale-110 hover:shadow-lg hover:shadow-amber-900/20 relative overflow-hidden border border-amber-800/50">
                                     <span className="relative z-10 text-xs text-black">
                                       Add to Cart
                                     </span>
@@ -85,6 +87,11 @@ const OurHomeMenu = () => {
                         </div>
                 )
             })}
+        </div>
+        <div className="flex justify-center mt-16">
+        <Link className="bg-amber-900/30 border-2 border-amber-800/30 text-amber-100 px-8 sm:px-10 py-3 rounded-full font-cinzel uppercase tracking-widest transition-all duration-300 hover:bg-amber-800/40 hover:text-amber-50 hover:scale-105 hover:shadow-lg hover:shadow-amber-900/20 backdrop-blur-sm" to='/menu'>
+       Explore Full Menu
+        </Link>
         </div>
       </div>
     </div>
