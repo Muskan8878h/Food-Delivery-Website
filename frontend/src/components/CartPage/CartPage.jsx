@@ -27,7 +27,7 @@ const CartPage = () => {
           </div>
         ) : (
           <>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md-grid-cols-3 lg:grid-cols-4 gap-6'>
               {cartItems.map((item,index)=>(
                 <div key={item.id || index}
                   className='group bg-amber-900/20 p-4 rounded-2xl border-4 border-dashed border-amber-500 backdrop-blur-sm flex-col items-center gap-4 transition-all duratio-300 hover:border-solid hover-shadow-xl hover:shadow-amber-900/10 transform hover:-translate-y-1 animate-fade-in'>
@@ -39,7 +39,7 @@ const CartPage = () => {
                       <h3 className='text-xl font-dancingscript text-amber-100'>
                         {item.name}
                       </h3>
-                      <p className='text-amber-100/80 font-cinzel mt-1'>${item.price}</p>
+                      <p className='text-amber-100/80 font-cinzel mt-1'>{item.price}</p>
                     </div>
                 </div>
 
