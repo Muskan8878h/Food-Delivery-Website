@@ -32,9 +32,9 @@ const AboutHome=()=>{
                         {aboutfeature.map((item,i)=>(
                             <div key={i} className="flex flex-col items-center justify-center gap-3 sm:gap-4 transition-transform duration-300 p-4 sm:p-5 hover:translate-x-2">
                                 <div className={"p-3 sm:p-4 rounded-full bg-gradient-to-br ${item.color} transition-transform duration-300 group-hover:scale-110"}>
-                                    <item.icon classname="text-2xl sm:text-3xl text-white"/>
+                                    <item.icon className="text-2xl sm:text-3xl text-white"/>
                             </div>
-                            <div classname="text-center">
+                            <div className="text-center">
                                 <h3 className="text-xl sm:text-2xl font-bold font-cursive">{item.title}</h3>
                                 <p className="opacity-80 text-sm sm:text-base">{item.text}</p>
 
@@ -45,7 +45,7 @@ const AboutHome=()=>{
 
                     <div className="flex flex-wrap gap-4 items-center mt-6 sm:mt-8 px-4 sm:px-0">
                         <Link to='/about' className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl font-bold hover:scale-[1.02] transition-transform duration-300 flex items-center gap-2 sm:gap-3 shadow-xl hover:shadow-amber-500/20 group relative overflow-hidden">
-                        <span xlassNmae="absolute insert-0 bg-gradient-to-r from-amber-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="absolute insert-0 bg-gradient-to-r from-amber-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         <FaInfoCircle className="text-lg sm:text-xl animate-pulse"/>
                         <span className="font-cursive text-lg sm:text-xl">Unevil Our Legacy</span>
                         </Link>
@@ -54,7 +54,7 @@ const AboutHome=()=>{
 
                 <div className="w-full order-2 lg:order-1 md:max-w-md lg:max:w-none lg:w-7/12 mt-12 mb-10 lg:mb-0 relative group transform hover:scale-[1.01] transition-all duration-500">
                 <div className="relativer rounded-[4rem] overflow-hidden border-4 border-amber-900/30 hover:border-amber-600/40 transition duration-500 shadow-2xl shadow-black/50">
-                <div classname="absolute inset-0 bg-gradient-to-br from-amber-400/15 via-transparent to-amber-600/10 mix-blend-soft-light"/>
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-400/15 via-transparent to-amber-600/10 mix-blend-soft-light"/>
                 
                 <img src={AboutImage} alt="Restaurant" className="w-full h-auto object-cover aspect-[3/4] transform-rotate-1 hover:rotate-0 transition-all duration-500"/>
                 <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-4/5 h-16 bg-amber-900/30 blur-3xl z-0"/></div>
