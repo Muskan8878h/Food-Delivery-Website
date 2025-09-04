@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useCart } from '../../CartContext/CartContext';
 import {dummyMenuData} from '../../assets/OmDD';
 import {Link} from 'react-router-dom'
+import './OurHomeMenu.css';
+
+
 const categories = ['Breakfast', 'Lunch', 'Dinner', 'Mexican', 'Italian', 'Desserts', 'Drinks'];
 const OurHomeMenu = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
