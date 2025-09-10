@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useCart } from '../../CartContext/CartContext'
 import { Link } from 'react-router-dom'
-import { FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
+import { FaMinus, FaPlus, FaTimes, FaTrash } from 'react-icons/fa';
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
@@ -27,7 +27,8 @@ const CartPage = () => {
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cartItems.map((item, index) => {
               // normalize fields here so CartPage never breaks
               const itemName = item.name || item.title || "Unnamed";
@@ -98,9 +99,39 @@ const CartPage = () => {
                 </div>
               )
             })}
-          </div>
+
+          </div> 
+          <div className='mt-12 pt-8 border-t border-amber-800/30 animaate-fade-in-up'>
+              <div className='flex flex-col sm:flex-row justify-between items-center gap-8'>
+                <Link to='/menu' className='bg-amber-900/40 px-8 py-3 rounded-full font-cinzel uppercase tracking-wider hover:bg-amber-800/50 transition-all duration-300 text-amber-100 inline-flex items-center gap-2 hover:gap-3 active:scale-95'>
+                  Continue Shopping
+                </Link>
+
+                <div className='flex items-center gap-8'>
+                  <h2 className='text-3xl font-dancingscript text-amber-100 '>
+                    Total: ₹{cartTotal}
+                  </h2>
+                  <button  className='bg-amber-900/40 px-8 py-3 rounded-full font-cinzel uppercase tracking-wider hover:bg-amber-800/50 transition-all duration-300 text-amber-100 inline-flex items-center gap-2 hover:gap-3 active:scale-95'>
+                    Checkout Now
+                  </button>
+                </div>
+              </div> 
+            </div>          
+          </>
         )}
       </div>
+      {selectedImage && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-amber-900/40 bg-opacity-75 backdrop-blur-sm p-4 overflow-auto' onClick={()=>setSelectedImage(null)}>
+          <div className='relative max-w-full max-h-full'>
+            <img src={selectedImage} alt="Full View " className='max-w-[90vw] max-h-[90vh] rounded-lg object-contain' />
+
+            <button onClick={()=>setSelectedImage(null)}
+              className='absolute top-1 right-1 bg-amber-900/80 rounded-full p-2 text-black hover:bg-amber-800/90 transition duration-200 active:scale-90'>
+                <FaTimes className='w-6 h-6 ' />
+            </button>
+          </div>
+        </div>
+      ) }
     </div>
   );
 };

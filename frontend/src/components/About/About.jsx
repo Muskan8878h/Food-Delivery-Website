@@ -12,7 +12,7 @@ const About = () => {
         <div className='absolute inset-0 opacity-10 mix-blend-soft-light' />   
         <motion.section initial={{opacity:0, y:50}} animate={{opacity:1,y:0}}
             className='py-16 px-4 text-center relative'>
-                <motion.h1 className='text-5xl sm:text-6xl md:text-7xl font-bold mb-4 font-bold mb-4 font-serif bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-600'>
+                <motion.h1 className='text-5xl sm:text-6xl md:text-7xl  font-bold mb-4 font-serif bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-600'>
                         Culinary Express            
                 </motion.h1> 
                 <motion.p initial={{opacity:0}} animate={{opacity:1}}>
