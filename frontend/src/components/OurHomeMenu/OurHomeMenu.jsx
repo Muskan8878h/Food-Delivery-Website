@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../../CartContext/CartContext';
-// import {FaMinus,FaPlus} from 'react-icons/fa'
+import {FaMinus,FaPlus} from 'react-icons/fa'
 import {dummyMenuData} from '../../assets/OmDD';
 import {Link} from 'react-router-dom'
 import './OurHomeMenu.css';
@@ -68,13 +68,13 @@ const OurHomeMenu = () => {
                             <div className="flex items-center gap-2">
                                 {quantity>0 ?(
                                     <>
-                                    <button classname="w-8 h-8 rounded-full bg-amber-900/40 flex items-center justify-center hover:bg-amber-800/50 transition-colors" onClick={()=>quantity>1?addToCart(item,quantity-1): removeFromCart(item.id)}>
+                                    <button className="w-8 h-8 rounded-full bg-amber-900/40 flex items-center justify-center hover:bg-amber-800/50 transition-colors" onClick={()=>quantity>1?addToCart(item,quantity-1): removeFromCart(item.id)}>
                                     <FaMinus className="text-amber-100"/>
                                     </button>
                                     <span className="w-8 text-center text-amber-100">
                                       {quantity}
                                       </span>
-                                      <button classname="w-8 h-8 rounded-full bg-amber-900/40 flex items-center justify-center hover:bg-amber-800/50 transition-colors" onClick={()=>addToCart(item,quantity+1)}>
+                                      <button className="w-8 h-8 rounded-full bg-amber-900/40 flex items-center justify-center hover:bg-amber-800/50 transition-colors" onClick={()=>addToCart(item,quantity+1)}>
                                       <FaPlus className="text-amber-100"/>
                                       </button>
                                     </>

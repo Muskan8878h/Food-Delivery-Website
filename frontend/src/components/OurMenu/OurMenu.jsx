@@ -83,7 +83,7 @@ const OurMenu = () => {
                           <button
                             onClick={() =>
                               quantity > 1
-                                ? addToCart(item, quantity - 1)
+                                ? addToCart(item, -1)
                                 : removeFromCart(item.id)
                             }
                             className="w-8 h-8 rounded-full bg-amber-900/40 flex items-center justify-center hover:bg-amber-800/50 transition-colors"
@@ -94,7 +94,7 @@ const OurMenu = () => {
                             {quantity}
                           </span>
                           <button
-                            onClick={() => addToCart(item, quantity + 1)}
+                            onClick={() => addToCart(item, 1)}
                             className="w-8 h-8 rounded-full bg-amber-900/40 flex items-center justify-center hover:bg-amber-800/50 transition-colors"
                           >
                             <FaPlus className="text-amber-100" />

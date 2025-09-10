@@ -24,14 +24,14 @@ const AboutHome=()=>{
                                 where Flavors Dance &amp; Memories Bloom
                             </span>
                         </h2>
-                        <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed max-w-3xl font-serif italic border-1-4 bg-amber-500/60 pl-4 sm:pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
+                        <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed max-w-3xl font-serif italic border-l-4 bg-amber-500/60 pl-4 sm:pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
                         "In our kitchen,passion meets precision. We craft not just meals, but culinary journeys that linger on the palate and in the heart."
                         </p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 px-4 sm:px-0">
                         {aboutfeature.map((item,i)=>(
                             <div key={i} className="flex flex-col items-center justify-center gap-3 sm:gap-4 transition-transform duration-300 p-4 sm:p-5 hover:translate-x-2">
-                                <div className={"p-3 sm:p-4 rounded-full bg-gradient-to-br ${item.color} transition-transform duration-300 group-hover:scale-110"}>
+                                <div className={`p-3 sm:p-4 rounded-full bg-gradient-to-br ${item.color} transition-transform duration-300 group-hover:scale-110`}>
                                     <item.icon className="text-2xl sm:text-3xl text-white"/>
                             </div>
                             <div className="text-center">
@@ -45,18 +45,18 @@ const AboutHome=()=>{
 
                     <div className="flex flex-wrap gap-4 items-center mt-6 sm:mt-8 px-4 sm:px-0">
                         <Link to='/about' className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl font-bold hover:scale-[1.02] transition-transform duration-300 flex items-center gap-2 sm:gap-3 shadow-xl hover:shadow-amber-500/20 group relative overflow-hidden">
-                        <span className="absolute insert-0 bg-gradient-to-r from-amber-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-amber-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         <FaInfoCircle className="text-lg sm:text-xl animate-pulse"/>
-                        <span className="font-cursive text-lg sm:text-xl">Unevil Our Legacy</span>
+                        <span className="font-cursive text-lg sm:text-xl">Unveil Our Legacy</span>
                         </Link>
                     </div>
                 </div>
 
-                <div className="w-full order-2 lg:order-1 md:max-w-md lg:max:w-none lg:w-7/12 mt-12 mb-10 lg:mb-0 relative group transform hover:scale-[1.01] transition-all duration-500">
-                <div className="relativer rounded-[4rem] overflow-hidden border-4 border-amber-900/30 hover:border-amber-600/40 transition duration-500 shadow-2xl shadow-black/50">
+                <div className="w-full order-2 lg:order-1 md:max-w-md lg:max-w-none lg:w-7/12 mt-12 mb-10 lg:mb-0 relative group transform hover:scale-[1.01] transition-all duration-500">
+                <div className="relative rounded-[4rem] overflow-hidden border-4 border-amber-900/30 hover:border-amber-600/40 transition duration-500 shadow-2xl shadow-black/50">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-400/15 via-transparent to-amber-600/10 mix-blend-soft-light"/>
                 
-                <img src={AboutImage} alt="Restaurant" className="w-full h-auto object-cover aspect-[3/4] transform-rotate-1 hover:rotate-0 transition-all duration-500"/>
+                <img src={AboutImage} alt="Restaurant" className="w-full h-auto object-cover aspect-[3/4] transform -rotate-1 hover:rotate-0 transition-all duration-500"/>
                 <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-4/5 h-16 bg-amber-900/30 blur-3xl z-0"/></div>
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl"/></div>
 
