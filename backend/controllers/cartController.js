@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
-import CartItem from "../modals/cartModal";
+import {CartItem} from "../modals/cartModal.js";
 
-// get cart 
+// get cart  
 export const getCart=asyncHandler(async(req,res)=>{
     const items=await CartItem.find({user:req.user._id}).populate('item');
 
